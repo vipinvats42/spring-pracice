@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 import com.telusko.Alien;
@@ -21,7 +22,7 @@ public class AppConfig {
 	}
 	
 	@Bean(name = "alien")
-	public Alien alien(@Qualifier("com") @Autowired Computer com) {
+	public Alien alien( @Autowired Computer com) {
 		Alien obj = new Alien();
 		obj.setAge(25);
 		obj.setLap(com);
@@ -29,6 +30,7 @@ public class AppConfig {
 	}
 	
 	@Bean
+	@Primary
 	public Laptop laptop() {
 		return new Laptop();
 	}
