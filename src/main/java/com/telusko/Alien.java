@@ -2,6 +2,9 @@ package com.telusko;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Alien {
      private int count =0;
      private int age=0;

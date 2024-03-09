@@ -12,15 +12,20 @@ public class App
     {
         
     	ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-    	Desktop desktop = context.getBean("com",Desktop.class);
-    	desktop.compile();
+      	Alien obj = context.getBean("alien" , Alien.class);
+      	System.out.println(obj.getAge());
+      	obj.code();
     	
-    	Desktop desktop1 = context.getBean("com",Desktop.class);
-    	desktop1.compile();
+		/*
+		 * Desktop desktop = context.getBean("com",Desktop.class); desktop.compile();
+		 */
     	
-       	  Alien obj = context.getBean("alien" , Alien.class);
-       	  System.out.println(obj.getAge());
-    	   obj.code(); 
+		/*
+		 * Desktop desktop1 = context.getBean("com",Desktop.class); desktop1.compile();
+		 * 
+		 * Alien obj = context.getBean("alien" , Alien.class);
+		 * System.out.println(obj.getAge()); obj.code();
+		 */
     	  
     	
 		/*
