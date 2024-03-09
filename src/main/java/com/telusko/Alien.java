@@ -12,7 +12,7 @@ public class Alien {
      private int age=0;
      
      @Autowired
-     @Qualifier("desktop")
+     //@Qualifier("desktop")
      private Computer lap;
      
      public Alien() {
@@ -31,6 +31,7 @@ public class Alien {
  		this.lap = lap;
  	}
 
+     @Qualifier("laptop")
 	public void setLap(Computer lap) {
 		this.lap = lap;
 	}
