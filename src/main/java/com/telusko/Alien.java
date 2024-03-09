@@ -2,12 +2,17 @@ package com.telusko;
 
 import java.beans.ConstructorProperties;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alien {
      private int count =0;
      private int age=0;
+     
+     @Autowired
+     @Qualifier("desktop")
      private Computer lap;
      
      public Alien() {
@@ -15,7 +20,7 @@ public class Alien {
      }
      
      
-     @ConstructorProperties({"age","lap"})
+		/* @ConstructorProperties({"age","lap"}) */
      public Alien(int age ,Computer lap) {
     	 System.out.println("Para constructor called");
     	 this.age=age;
